@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="modes">
+      <button id="cmplx_mode" class="mode" onclick="changeMode('CMPLX')">
+        Complex calculations
+      </button>
+      <button id="comp_mode" class="mode" onclick="changeMode('COMP')">
+        General calculations
+      </button>
+    </div>
+    <div class="container">
+      <div id="comp_calc" class="calculator">
+        <div class="display">
+          <input id="screen" type="text" readonly />
+        </div>
+
+        <div class="btns">
+          <div class="row">
+            <button id="ce" onclick="backspc()">&#9003;</button>
+            <button onclick="fact()">x!</button>
+            <button class="btn">(</button>
+            <button class="btn">)</button>
+            <button class="btn">%</button>
+            <button id="ac" onclick="screen.value=''">AC</button>
+          </div>
+
+          <div class="row">
+            <button onclick="sin()">sin</button>
+            <button onclick="pi()">π</button>
+            <button class="btn">7</button>
+            <button class="btn">8</button>
+            <button class="btn">9</button>
+            <button class="btn">÷</button>
+          </div>
+
+          <div class="row">
+            <button onclick="cos()">cos</button>
+            <button onclick="log()">log</button>
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <button class="btn">6</button>
+            <button class="btn">×</button>
+          </div>
+
+          <div class="row">
+            <button onclick="tan()">tan</button>
+            <button onclick="sqrt()">√</button>
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <button class="btn">-</button>
+          </div>
+
+          <div class="row">
+            <button onclick="e()">e</button>
+            <button onclick="pow()">
+              x
+              <sup>2</sup>
+            </button>
+            <button class="btn">0</button>
+            <button class="btn">.</button>
+            <button id="eval" onclick="screen.value = eval(screen.value);">
+              =
+            </button>
+            <button class="btn">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="cmplx_calc" class="">
+      <label for="real1">Real Part (Number 1):</label>
+      <input type="number" id="real1" step="any" /><br /><br />
+
+      <label for="imag1">Imaginary Part (Number 1):</label>
+      <input type="number" id="imag1" step="any" /><br /><br />
+
+      <label for="real2">Real Part (Number 2):</label>
+      <input type="number" id="real2" step="any" /><br /><br />
+
+      <label for="imag2">Imaginary Part (Number 2):</label>
+      <input type="number" id="imag2" step="any" /><br /><br />
+
+      <button onclick="add()">Add</button>
+      <button onclick="subtract()">Subtract</button>
+      <button onclick="multiply()">Multiply</button>
+      <button onclick="divide()">Divide</button>
+
+      <h2>Result:</h2>
+      <p id="result"></p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
